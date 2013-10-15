@@ -1,1 +1,43 @@
-/*SQLyog Community v8.5 MySQL - 5.1.45-community : Database - MangosVB0**********************************************************************//*!40101 SET NAMES utf8 */;/*!40101 SET SQL_MODE=''*/;/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;CREATE DATABASE /*!32312 IF NOT EXISTS*/`spuriouszero` /*!40100 DEFAULT CHARACTER SET latin1 */;/*Table structure for table `realmlist` */DROP TABLE IF EXISTS `realmlist`;CREATE TABLE `realmlist` (	`id` TINYINT(3) UNSIGNED NOT NULL AUTO_INCREMENT,	`name` VARCHAR(50) NOT NULL DEFAULT 'MangosVB Development',	`address` VARCHAR(50) NOT NULL DEFAULT '127.0.0.1' COMMENT 'Realm Host IP Address',	`port` INT(5) NOT NULL DEFAULT '8085',	`flags` TINYINT(3) UNSIGNED NOT NULL DEFAULT '2' COMMENT 'Flags - 0 = online, 1 = invaild, 2 = offline',	`icon` TINYINT(3) UNSIGNED NOT NULL DEFAULT '0',	`population` FLOAT(3,0) UNSIGNED NOT NULL DEFAULT '0' COMMENT 'Total Population on the realm',	`timezone` TINYINT(3) NOT NULL DEFAULT '1',	`security` TINYINT(1) NOT NULL DEFAULT '0' COMMENT 'GM Security Access',	PRIMARY KEY (`id`)) ENGINE=MyISAM DEFAULT CHARSET=utf8;/*Data for the table `realms` */insert  into `realmlist`(`id`,`name`,`address`,`port`,`flags`,`icon`,`population`,`timezone`,`security`) values (0,'MangosVB0 Test Server','5.61.20.100',8085,0,0,0,1,0);insert  into `realmlist`(`id`,`name`,`address`,`port`,`flags`,`icon`,`population`,`timezone`,`security`) values (1,'MangosVB0 Lan Server','192.168.1.65',8085,0,0,0,1,0);/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+/*
+SQLyog Community v11.22 (64 bit)
+MySQL - 5.6.14-log : Database - realmd
+*********************************************************************
+*/
+
+/*!40101 SET NAMES utf8 */;
+
+/*!40101 SET SQL_MODE=''*/;
+
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`realmd` /*!40100 DEFAULT CHARACTER SET utf8 */;
+
+/*Table structure for table `realmlist` */
+
+DROP TABLE IF EXISTS `realmlist`;
+
+CREATE TABLE `realmlist` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Realm identifier',
+  `name` varchar(32) NOT NULL DEFAULT '',
+  `address` varchar(32) NOT NULL DEFAULT '127.0.0.1',
+  `port` int(11) NOT NULL DEFAULT '8085',
+  `icon` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `realmflags` tinyint(3) unsigned NOT NULL DEFAULT '2' COMMENT 'Supported masks: 0x1 (invalid, not show in realm list), 0x2 (offline, set by mangosd), 0x4 (show version and build), 0x20 (new players), 0x40 (recommended)',
+  `timezone` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `allowedSecurityLevel` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `population` float unsigned NOT NULL DEFAULT '0',
+  `realmbuilds` varchar(64) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `idx_name` (`name`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Realm System';
+
+/*Data for the table `realmlist` */
+
+insert  into `realmlist`(`id`,`name`,`address`,`port`,`icon`,`realmflags`,`timezone`,`allowedSecurityLevel`,`population`,`realmbuilds`) values (1,'MaNGOS','127.0.0.1',8085,0,2,0,0,0,'');
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
