@@ -1,67 +1,106 @@
-/*
-SQLyog Community v8.5 
-MySQL - 5.1.45-community : Database - spuriouszero
-*********************************************************************
-*/
-
-/*!40101 SET NAMES utf8 */;
-
-/*!40101 SET SQL_MODE=''*/;
-
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`spuriouszero` /*!40100 DEFAULT CHARACTER SET latin1 */;
-
-/*Table structure for table `areatrigger_tavern` */
-
-DROP TABLE IF EXISTS `areatrigger_tavern`;
-
+--
+-- Copyright (C) 2005-2013 MaNGOS <http://getmangos.com/>
+-- Copyright (C) 2009-2013 MaNGOSZero <https://github.com/mangoszero>
+--
+-- This program is free software; you can redistribute it and/or modify
+-- it under the terms of the GNU General Public License as published by
+-- the Free Software Foundation; either version 2 of the License, or
+-- (at your option) any later version.
+--
+-- This program is distributed in the hope that it will be useful,
+-- but WITHOUT ANY WARRANTY; without even the implied warranty of
+-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-- GNU General Public License for more details.
+--
+-- You should have received a copy of the GNU General Public License
+-- along with this program; if not, write to the Free Software
+-- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+--
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `areatrigger_tavern`
+--
+
+DROP TABLE IF EXISTS `areatrigger_tavern`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `areatrigger_tavern` (
-  `id` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `id` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Identifier',
   `name` text,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
-/*Data for the table `areatrigger_tavern` */
-
-insert  into `areatrigger_tavern`(`id`,`name`) values (71,'Westfall - Sentinel Hill Inn');
-insert  into `areatrigger_tavern`(`id`,`name`) values (562,'Elwynn Forest - Goldshire - Lion\'s Pride Inn');
-insert  into `areatrigger_tavern`(`id`,`name`) values (682,'Redridge Mountains - Lakeshire Inn');
-insert  into `areatrigger_tavern`(`id`,`name`) values (707,'Duskwood - Darkshire - Scarlet Raven Inn');
-insert  into `areatrigger_tavern`(`id`,`name`) values (708,'Hillsbrad Foothills - Southshore Inn');
-insert  into `areatrigger_tavern`(`id`,`name`) values (709,'Dustwallow Marsh - Theramore Isle');
-insert  into `areatrigger_tavern`(`id`,`name`) values (710,'Dun Morogh - Kharanos - Thunderbrew Distillery');
-insert  into `areatrigger_tavern`(`id`,`name`) values (712,'Loch Modan - Thelsamar - Stoutlager Inn');
-insert  into `areatrigger_tavern`(`id`,`name`) values (713,'Wetlands - Menethil Harbor - Deepwater Tavern');
-insert  into `areatrigger_tavern`(`id`,`name`) values (715,'Teldrassil - Dolanaar');
-insert  into `areatrigger_tavern`(`id`,`name`) values (716,'Darkshore - Auberdine');
-insert  into `areatrigger_tavern`(`id`,`name`) values (717,'Ashenvale - Astranaar');
-insert  into `areatrigger_tavern`(`id`,`name`) values (719,'Tirisfal Glades - Brill - Gallows\' End Tavern');
-insert  into `areatrigger_tavern`(`id`,`name`) values (720,'Silverpine Forest – The Sepulcher');
-insert  into `areatrigger_tavern`(`id`,`name`) values (721,'Hillsbrad Foothills – Tarren Mill');
-insert  into `areatrigger_tavern`(`id`,`name`) values (722,'Mulgore – Bloodhoof Village');
-insert  into `areatrigger_tavern`(`id`,`name`) values (742,'The Barrens – Crossroads');
-insert  into `areatrigger_tavern`(`id`,`name`) values (743,'The Barrens – Ratchet');
-insert  into `areatrigger_tavern`(`id`,`name`) values (843,'Durotar – Razor Hill');
-insert  into `areatrigger_tavern`(`id`,`name`) values (844,'Swamp of Sorrows – Stonard');
-insert  into `areatrigger_tavern`(`id`,`name`) values (862,'Stranglethorn Vale – Booty Bay');
-insert  into `areatrigger_tavern`(`id`,`name`) values (982,'The Barrens – Camp Taurajo');
-insert  into `areatrigger_tavern`(`id`,`name`) values (1022,'Stonetalon Mountains – Sun Rock Retreat');
-insert  into `areatrigger_tavern`(`id`,`name`) values (1023,'Tanaris – Gadgetzan');
-insert  into `areatrigger_tavern`(`id`,`name`) values (1024,'Feralas – Feathermoon Stronghold');
-insert  into `areatrigger_tavern`(`id`,`name`) values (1025,'Feralas – Camp Mojache');
-insert  into `areatrigger_tavern`(`id`,`name`) values (1606,'Badlands – Kargath');
-insert  into `areatrigger_tavern`(`id`,`name`) values (1646,'Arathi Highlands – Hammerfall');
-insert  into `areatrigger_tavern`(`id`,`name`) values (2266,'Desolace – Nijel\'s Point');
-insert  into `areatrigger_tavern`(`id`,`name`) values (2267,'Desolace – Shadowprey Village');
-insert  into `areatrigger_tavern`(`id`,`name`) values (2286,'Thousand Needles – Freewind Post');
-insert  into `areatrigger_tavern`(`id`,`name`) values (2287,'Winterspring – Everlook');
-insert  into `areatrigger_tavern`(`id`,`name`) values (2610,'Ashenvale – Splintertree Post');
-insert  into `areatrigger_tavern`(`id`,`name`) values (1021,'Stonetalon Mountains – Stonetalon Peak');
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Trigger System';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `areatrigger_tavern`
+--
+
+LOCK TABLES `areatrigger_tavern` WRITE;
+/*!40000 ALTER TABLE `areatrigger_tavern` DISABLE KEYS */;
+INSERT INTO `areatrigger_tavern` VALUES
+(71,'Westfall - Sentinel Hill Inn'),
+(178,'Strahnbrad'),
+(562,'Elwynn Forest - Goldshire - Lion\'s Pride Inn'),
+(682,'Redridge Mountains - Lakeshire Inn'),
+(707,'Duskwood - Darkshire - Scarlet Raven Inn'),
+(708,'Hillsbrad Foothills - Southshore Inn'),
+(709,'Dustwallow Marsh - Theramore Isle'),
+(710,'Dun Morogh - Kharanos - Thunderbrew Distillery'),
+(712,'Loch Modan - Thelsamar - Stoutlager Inn'),
+(713,'Wetlands - Menethil Harbor - Deepwater Tavern'),
+(715,'Teldrassil - Dolanaar'),
+(716,'Darkshore - Auberdine'),
+(717,'Ashenvale - Astranaar'),
+(719,'Tirisfal Glades - Brill - Gallows\' End Tavern'),
+(720,'Silverpine Forest '),
+(721,'Hillsbrad Foothills '),
+(722,'Mulgore '),
+(742,'The Barrens '),
+(743,'The Barrens '),
+(843,'Durotar '),
+(844,'Swamp of Sorrows '),
+(862,'Stranglethorn Vale '),
+(982,'The Barrens '),
+(1022,'Stonetalon Mountains '),
+(1023,'Tanaris '),
+(1024,'Feralas '),
+(1025,'Feralas '),
+(1042,'Wildhammer Keep'),
+(1606,'Badlands '),
+(1646,'Arathi Highlands '),
+(2266,'Desolace '),
+(2267,'Desolace '),
+(2286,'Thousand Needles '),
+(2287,'Winterspring '),
+(2610,'Ashenvale '),
+(2786,'Stormwind backup rest'),
+(3547,'The Undercity'),
+(3690,'Revantusk Village'),
+(3886,'Grom\'gol Base Camp'),
+(3985,'Cenarion Hold'),
+(4058,'Light\'s Hope Chapel'),
+(4090,'Stonetalon Peak');
+/*!40000 ALTER TABLE `areatrigger_tavern` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed

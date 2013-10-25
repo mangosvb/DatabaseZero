@@ -1,89 +1,121 @@
-/*
-SQLyog Community v8.5 
-MySQL - 5.1.45-community : Database - spuriouszero
-*********************************************************************
-*/
-
-/*!40101 SET NAMES utf8 */;
-
-/*!40101 SET SQL_MODE=''*/;
-
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`spuriouszero` /*!40100 DEFAULT CHARACTER SET latin1 */;
-
-/*Table structure for table `skill_fishing_base_level` */
-
-DROP TABLE IF EXISTS `skill_fishing_base_level`;
-
+--
+-- Copyright (C) 2005-2013 MaNGOS <http://getmangos.com/>
+-- Copyright (C) 2009-2013 MaNGOSZero <https://github.com/mangoszero>
+--
+-- This program is free software; you can redistribute it and/or modify
+-- it under the terms of the GNU General Public License as published by
+-- the Free Software Foundation; either version 2 of the License, or
+-- (at your option) any later version.
+--
+-- This program is distributed in the hope that it will be useful,
+-- but WITHOUT ANY WARRANTY; without even the implied warranty of
+-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-- GNU General Public License for more details.
+--
+-- You should have received a copy of the GNU General Public License
+-- along with this program; if not, write to the Free Software
+-- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+--
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `skill_fishing_base_level`
+--
+
+DROP TABLE IF EXISTS `skill_fishing_base_level`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `skill_fishing_base_level` (
   `entry` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Area identifier',
   `skill` smallint(6) NOT NULL DEFAULT '0' COMMENT 'Base skill level requirement',
   PRIMARY KEY (`entry`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Fishing system';
-
-/*Data for the table `skill_fishing_base_level` */
-
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (1,-70);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (12,-70);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (14,-70);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (85,-70);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (141,-70);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (215,-70);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (17,-20);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (38,-20);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (40,-20);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (130,-20);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (148,-20);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (718,-20);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (719,-20);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (1519,-20);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (1537,-20);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (1581,-20);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (1637,-20);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (1638,-20);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (1657,-20);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (10,55);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (11,55);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (44,55);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (267,55);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (331,55);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (406,55);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (8,130);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (15,130);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (33,130);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (36,130);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (45,130);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (400,130);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (405,130);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (796,130);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (16,205);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (28,205);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (47,205);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (357,205);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (361,205);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (440,205);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (490,205);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (493,205);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (1417,205);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (2100,205);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (41,330);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (46,330);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (139,330);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (618,330);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (1377,330);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (1977,330);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (2017,330);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (2057,330);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (297,205);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (1112,330);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (1222,330);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (1227,330);
-insert  into `skill_fishing_base_level`(`entry`,`skill`) values (3140,330);
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Fishing system';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `skill_fishing_base_level`
+--
+
+LOCK TABLES `skill_fishing_base_level` WRITE;
+/*!40000 ALTER TABLE `skill_fishing_base_level` DISABLE KEYS */;
+INSERT INTO `skill_fishing_base_level` VALUES
+(1,-70),
+(8,130),
+(10,55),
+(11,55),
+(12,-70),
+(14,-70),
+(15,130),
+(16,205),
+(17,-20),
+(28,205),
+(33,130),
+(36,130),
+(38,-20),
+(40,-20),
+(41,330),
+(44,55),
+(45,130),
+(46,330),
+(47,205),
+(85,-70),
+(130,-20),
+(139,330),
+(141,-70),
+(148,-20),
+(215,-70),
+(267,55),
+(297,205),
+(331,55),
+(357,205),
+(361,205),
+(400,130),
+(405,130),
+(406,55),
+(440,205),
+(490,205),
+(493,205),
+(618,330),
+(718,-20),
+(719,-20),
+(796,130),
+(1112,330),
+(1222,330),
+(1227,330),
+(1377,330),
+(1417,205),
+(1497,-20),
+(1519,-20),
+(1537,-20),
+(1581,-20),
+(1637,-20),
+(1638,-20),
+(1657,-20),
+(1977,330),
+(2017,330),
+(2057,330),
+(2100,205),
+(3140,330);
+/*!40000 ALTER TABLE `skill_fishing_base_level` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed

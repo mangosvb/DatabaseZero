@@ -1,1003 +1,1035 @@
-/*
-SQLyog Community v8.5 
-MySQL - 5.1.45-community : Database - spuriouszero
-*********************************************************************
-*/
-
-/*!40101 SET NAMES utf8 */;
-
-/*!40101 SET SQL_MODE=''*/;
-
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`spuriouszero` /*!40100 DEFAULT CHARACTER SET latin1 */;
-
-/*Table structure for table `spell_facing` */
-
-DROP TABLE IF EXISTS `spell_facing`;
-
+--
+-- Copyright (C) 2005-2013 MaNGOS <http://getmangos.com/>
+-- Copyright (C) 2009-2013 MaNGOSZero <https://github.com/mangoszero>
+--
+-- This program is free software; you can redistribute it and/or modify
+-- it under the terms of the GNU General Public License as published by
+-- the Free Software Foundation; either version 2 of the License, or
+-- (at your option) any later version.
+--
+-- This program is distributed in the hope that it will be useful,
+-- but WITHOUT ANY WARRANTY; without even the implied warranty of
+-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-- GNU General Public License for more details.
+--
+-- You should have received a copy of the GNU General Public License
+-- along with this program; if not, write to the Free Software
+-- Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+--
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `spell_facing`
+--
+
+DROP TABLE IF EXISTS `spell_facing`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `spell_facing` (
-  `entry` double DEFAULT NULL,
-  `facingcasterflag` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-/*Data for the table `spell_facing` */
-
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (53,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (72,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (75,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (78,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (100,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (116,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (133,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (143,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (145,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (205,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (284,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (285,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (348,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (403,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (408,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (421,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (529,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (548,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (585,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (591,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (598,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (676,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (686,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (689,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (694,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (695,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (699,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (703,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (705,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (707,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (709,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (769,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (772,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (779,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (780,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (837,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (845,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (879,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (915,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (930,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (943,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (984,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1004,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1079,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1082,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1088,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1094,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1106,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1120,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1329,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1464,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1495,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1608,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1671,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1672,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1715,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1742,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1752,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1753,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1754,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1755,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1756,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1757,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1758,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1759,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1760,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1766,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1767,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1768,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1769,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1776,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1777,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1822,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1823,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1824,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1833,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1943,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1966,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (1978,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (2070,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (2098,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (2136,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (2137,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (2138,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (2589,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (2590,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (2591,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (2643,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (2764,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (2860,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (2912,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (2941,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (2948,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (2973,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (2974,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (3009,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (3010,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (3018,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (3029,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (3034,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (3043,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (3044,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (3140,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (3674,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (4164,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (4165,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (5019,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (5116,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (5133,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (5138,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (5143,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (5144,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (5145,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (5176,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (5177,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (5178,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (5179,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (5180,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (5201,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (5211,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (5221,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (5306,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (5308,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (5375,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (5401,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (5614,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (5615,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (5676,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (5938,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (6041,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (6060,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (6178,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (6252,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (6254,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (6255,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (6353,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (6546,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (6547,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (6548,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (6552,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (6554,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (6555,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (6572,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (6574,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (6660,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (6726,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (6760,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (6761,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (6762,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (6768,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (6770,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (6780,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (6785,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (6787,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (6789,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (6798,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (6800,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (6807,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (6808,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (6809,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (6949,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (7105,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (7145,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (7268,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (7269,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (7270,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (7290,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (7295,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (7322,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (7369,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (7372,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (7373,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (7379,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (7384,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (7386,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (7400,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (7402,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (7405,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (7641,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (7651,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (7712,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (7714,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (7715,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (7716,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (7717,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (7718,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (7719,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (7769,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (7887,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8042,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8044,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8045,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8046,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8050,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8052,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8053,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8056,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8058,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8092,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8102,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8103,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8104,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8105,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8106,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8129,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8246,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8255,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8288,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8289,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8380,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8398,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8400,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8401,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8402,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8406,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8407,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8408,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8412,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8413,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8416,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8417,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8418,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8419,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8444,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8445,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8446,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8598,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8621,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8623,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8624,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8629,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8631,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8632,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8633,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8637,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8639,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8640,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8643,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8647,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8649,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8650,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8676,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8682,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8721,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8724,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8725,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8820,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8905,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8921,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8924,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8925,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8926,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8927,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8928,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8929,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8949,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8950,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8951,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8972,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8983,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8992,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (8998,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9000,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9005,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9053,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9057,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9081,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9373,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9481,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9483,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9487,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9488,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9492,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9493,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9532,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9591,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9613,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9654,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9672,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9734,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9739,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9745,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9752,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9754,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9771,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9823,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9827,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9829,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9830,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9833,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9834,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9835,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9849,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9850,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9866,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9867,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9875,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9876,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9880,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9881,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9892,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9894,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9896,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9904,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9908,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (9912,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10148,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10149,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10150,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10151,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10179,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10180,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10181,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10197,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10199,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10205,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10206,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10207,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10211,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10212,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10273,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10274,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10277,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10312,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10313,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10314,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10346,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10391,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10392,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10412,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10413,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10414,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10447,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10448,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10472,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10473,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10578,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10605,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10933,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10934,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10945,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10946,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (10947,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11021,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11131,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11197,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11198,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11267,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11268,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11269,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11273,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11274,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11275,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11279,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11280,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11281,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11285,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11286,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11289,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11290,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11293,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11294,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11297,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11299,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11300,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11303,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11366,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11538,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11564,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11565,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11566,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11567,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11572,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11573,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11574,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11578,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11584,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11585,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11596,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11597,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11600,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11601,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11604,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11605,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11608,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11609,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11659,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11660,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11661,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11665,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11667,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11668,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11675,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11699,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11700,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11839,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11921,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11985,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11988,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (11989,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (12058,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (12167,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (12280,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (12294,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (12466,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (12471,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (12505,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (12522,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (12523,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (12524,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (12525,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (12526,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (12555,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (12557,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (12611,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (12675,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (12693,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (12737,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (12739,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (12809,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (13140,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (13322,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (13339,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (13340,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (13341,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (13342,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (13374,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (13375,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (13398,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (13438,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (13439,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (13440,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (13441,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (13480,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (13482,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (13491,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (13519,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (13527,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (13549,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (13550,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (13551,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (13552,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (13553,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (13554,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (13555,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (13748,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (13900,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (13901,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (13953,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14034,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14105,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14106,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14109,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14112,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14119,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14122,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14145,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14200,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14251,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14260,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14261,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14262,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14263,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14264,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14265,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14266,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14269,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14270,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14271,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14278,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14281,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14282,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14283,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14284,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14285,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14286,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14287,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14288,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14289,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14290,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14443,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14517,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14518,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14873,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14874,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14895,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14902,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14903,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (14914,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15040,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15043,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15095,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15117,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15124,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15207,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15208,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15228,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15230,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15232,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15234,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15238,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15242,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15243,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15244,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15249,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15254,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15261,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15262,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15263,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15264,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15265,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15266,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15267,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15284,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15285,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15305,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15407,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15451,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15472,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15496,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15497,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15498,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15530,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15536,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15537,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15547,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15549,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15574,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15575,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15581,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15583,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15598,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15607,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15611,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15612,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15615,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15619,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15620,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15653,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15659,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15662,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15665,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15667,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15668,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15691,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15692,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15735,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15736,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15790,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15791,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15795,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15797,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15801,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15860,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (15968,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16000,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16001,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16006,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16033,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16044,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16067,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16100,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16101,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16144,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16243,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16249,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16250,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16375,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16407,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16408,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16409,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16410,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16412,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16413,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16414,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16415,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16430,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16454,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16496,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16511,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16564,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16565,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16570,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16603,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16614,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16697,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16784,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16788,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16790,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16799,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16827,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16828,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16829,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16830,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16831,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16832,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16868,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16908,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16979,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (16997,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17008,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17140,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17141,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17142,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17143,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17144,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17147,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17149,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17157,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17171,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17173,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17174,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17198,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17203,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17238,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17243,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17253,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17255,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17256,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17257,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17258,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17259,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17260,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17261,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17273,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17274,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17276,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17281,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17284,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17290,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17311,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17312,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17313,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17314,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17333,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17347,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17348,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17353,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17364,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17393,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17434,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17435,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17483,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17501,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17503,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17509,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17620,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17682,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17745,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17877,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17919,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17920,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17921,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17922,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17923,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17924,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17925,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17926,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17962,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (17963,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18081,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18082,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18083,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18084,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18085,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18089,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18091,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18092,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18104,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18105,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18108,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18111,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18138,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18164,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18165,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18187,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18199,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18204,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18205,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18211,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18214,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18217,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18276,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18278,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18392,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18398,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18545,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18557,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18561,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18649,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18651,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18796,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18807,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18809,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18817,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18819,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18833,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18867,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18868,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18869,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18870,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18871,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18980,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (18984,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (19128,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (19260,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (19306,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (19319,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (19386,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (19391,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (19434,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (19463,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (19472,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (19503,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (19632,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (19639,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (19642,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (19701,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (19715,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (19725,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (19728,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (19729,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (19767,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (19777,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (19781,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (19785,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (19801,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (19816,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (19874,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (19881,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (19983,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20228,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20240,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20243,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20252,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20276,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20295,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20297,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20298,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20420,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20463,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20535,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20536,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20543,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20559,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20560,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20569,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20605,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20616,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20617,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20627,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20630,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20657,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20658,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20660,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20661,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20662,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20666,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20678,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20684,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20691,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20692,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20695,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20696,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20698,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20714,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20720,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20735,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20736,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20743,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20791,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20792,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20793,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20795,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20797,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20802,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20805,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20806,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20807,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20808,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20811,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20815,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20816,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20819,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20820,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20821,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20822,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20823,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20824,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20825,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20828,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20829,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20831,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20832,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20869,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20883,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20900,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20901,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20902,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20903,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20904,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20909,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (20910,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (21008,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (21027,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (21047,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (21059,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (21071,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (21072,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (21077,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (21141,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (21151,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (21159,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (21162,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (21167,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (21170,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (21343,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (21354,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (21369,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (21390,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (21402,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (21549,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (21551,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (21552,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (21553,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (21667,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (21668,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (21807,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (21832,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (21978,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (22088,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (22121,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (22272,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (22273,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (22336,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (22355,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (22357,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (22411,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (22414,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (22425,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (22427,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (22568,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (22570,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (22574,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (22643,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (22666,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (22677,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (22746,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (22827,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (22828,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (22829,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (22859,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (22878,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (22887,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (22907,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (22908,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (23073,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (23102,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (23106,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (23206,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (23267,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (23391,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (23392,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (23512,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (23592,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (23601,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (23848,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (23850,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (23860,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (23881,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (23892,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (23893,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (23894,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (23922,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (23923,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (23924,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (23925,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (23959,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (23960,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (24042,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (24049,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (24132,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (24133,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (24238,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (24239,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (24248,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (24274,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (24275,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (24300,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (24331,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (24332,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (24334,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (24335,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (24374,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (24393,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (24407,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (24583,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (24585,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (24586,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (24587,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (24619,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (24640,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (24668,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (24680,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (24844,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (24942,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (25008,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (25009,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (25010,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (25011,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (25012,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (25021,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (25052,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (25054,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (25055,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (25174,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (25286,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (25288,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (25294,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (25295,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (25298,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (25300,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (25302,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (25304,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (25306,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (25307,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (25309,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (25345,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (25346,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (25677,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (25686,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (25710,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (25712,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (25783,15);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (25902,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (25911,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (25912,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (25995,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (26006,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (26098,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (26282,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (26350,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (26616,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (26693,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (27360,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (27552,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (27554,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (27559,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (27567,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (27572,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (27580,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (27581,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (27584,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (27611,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (27615,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (27632,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (27633,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (27794,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (27860,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (28318,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (28412,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (28478,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (28599,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (29070,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (29155,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (29228,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (29317,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (29515,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (30095,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (31016,1);
-insert  into `spell_facing`(`entry`,`facingcasterflag`) values (31018,1);
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+  `entry` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'Spell ID',
+  `facingcasterflag` tinyint(1) NOT NULL DEFAULT '1' COMMENT 'flag for facing state, usually 1',
+  PRIMARY KEY (`entry`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `spell_facing`
+--
+
+LOCK TABLES `spell_facing` WRITE;
+/*!40000 ALTER TABLE `spell_facing` DISABLE KEYS */;
+INSERT INTO `spell_facing` VALUES
+(53,1),
+(72,1),
+(75,1),
+(78,1),
+(100,1),
+(116,1),
+(133,1),
+(143,1),
+(145,1),
+(205,1),
+(284,1),
+(285,1),
+(348,1),
+(403,1),
+(408,1),
+(421,1),
+(529,1),
+(548,1),
+(585,1),
+(591,1),
+(598,1),
+(676,1),
+(686,1),
+(689,1),
+(694,1),
+(695,1),
+(699,1),
+(703,1),
+(705,1),
+(707,1),
+(709,1),
+(769,1),
+(772,1),
+(779,1),
+(780,1),
+(837,1),
+(845,1),
+(879,1),
+(915,1),
+(930,1),
+(943,1),
+(984,1),
+(1004,1),
+(1079,1),
+(1082,1),
+(1088,1),
+(1094,1),
+(1106,1),
+(1120,1),
+(1329,1),
+(1464,1),
+(1495,1),
+(1608,1),
+(1671,1),
+(1672,1),
+(1715,1),
+(1742,1),
+(1752,1),
+(1753,1),
+(1754,1),
+(1755,1),
+(1756,1),
+(1757,1),
+(1758,1),
+(1759,1),
+(1760,1),
+(1766,1),
+(1767,1),
+(1768,1),
+(1769,1),
+(1776,1),
+(1777,1),
+(1822,1),
+(1823,1),
+(1824,1),
+(1833,1),
+(1943,1),
+(1966,1),
+(1978,1),
+(2070,1),
+(2098,1),
+(2136,1),
+(2137,1),
+(2138,1),
+(2589,1),
+(2590,1),
+(2591,1),
+(2643,1),
+(2764,1),
+(2860,1),
+(2912,1),
+(2941,1),
+(2948,1),
+(2973,1),
+(2974,1),
+(3009,1),
+(3010,1),
+(3018,1),
+(3029,1),
+(3034,1),
+(3043,1),
+(3044,1),
+(3140,1),
+(3674,1),
+(4164,1),
+(4165,1),
+(5019,1),
+(5116,1),
+(5133,1),
+(5138,1),
+(5143,1),
+(5144,1),
+(5145,1),
+(5176,1),
+(5177,1),
+(5178,1),
+(5179,1),
+(5180,1),
+(5201,1),
+(5211,1),
+(5221,1),
+(5306,1),
+(5308,1),
+(5375,1),
+(5401,1),
+(5614,1),
+(5615,1),
+(5676,1),
+(5938,1),
+(6041,1),
+(6060,1),
+(6178,1),
+(6252,1),
+(6254,1),
+(6255,1),
+(6353,1),
+(6546,1),
+(6547,1),
+(6548,1),
+(6552,1),
+(6554,1),
+(6555,1),
+(6572,1),
+(6574,1),
+(6660,1),
+(6726,1),
+(6760,1),
+(6761,1),
+(6762,1),
+(6768,1),
+(6770,1),
+(6780,1),
+(6785,1),
+(6787,1),
+(6789,1),
+(6798,1),
+(6800,1),
+(6807,1),
+(6808,1),
+(6809,1),
+(6949,1),
+(7105,1),
+(7145,1),
+(7268,1),
+(7269,1),
+(7270,1),
+(7290,1),
+(7295,1),
+(7322,1),
+(7369,1),
+(7372,1),
+(7373,1),
+(7379,1),
+(7384,1),
+(7386,1),
+(7400,1),
+(7402,1),
+(7405,1),
+(7641,1),
+(7651,1),
+(7712,1),
+(7714,1),
+(7715,1),
+(7716,1),
+(7717,1),
+(7718,1),
+(7719,1),
+(7769,1),
+(7887,1),
+(8042,1),
+(8044,1),
+(8045,1),
+(8046,1),
+(8050,1),
+(8052,1),
+(8053,1),
+(8056,1),
+(8058,1),
+(8092,1),
+(8102,1),
+(8103,1),
+(8104,1),
+(8105,1),
+(8106,1),
+(8129,1),
+(8246,1),
+(8255,1),
+(8288,1),
+(8289,1),
+(8380,1),
+(8398,1),
+(8400,1),
+(8401,1),
+(8402,1),
+(8406,1),
+(8407,1),
+(8408,1),
+(8412,1),
+(8413,1),
+(8416,1),
+(8417,1),
+(8418,1),
+(8419,1),
+(8444,1),
+(8445,1),
+(8446,1),
+(8598,1),
+(8621,1),
+(8623,1),
+(8624,1),
+(8629,1),
+(8631,1),
+(8632,1),
+(8633,1),
+(8637,1),
+(8639,1),
+(8640,1),
+(8643,1),
+(8647,1),
+(8649,1),
+(8650,1),
+(8676,1),
+(8682,1),
+(8721,1),
+(8724,1),
+(8725,1),
+(8820,1),
+(8905,1),
+(8921,1),
+(8924,1),
+(8925,1),
+(8926,1),
+(8927,1),
+(8928,1),
+(8929,1),
+(8949,1),
+(8950,1),
+(8951,1),
+(8972,1),
+(8983,1),
+(8992,1),
+(8998,1),
+(9000,1),
+(9005,1),
+(9053,1),
+(9057,1),
+(9081,1),
+(9373,1),
+(9481,1),
+(9483,1),
+(9487,1),
+(9488,1),
+(9492,1),
+(9493,1),
+(9532,1),
+(9591,1),
+(9613,1),
+(9654,1),
+(9672,1),
+(9734,1),
+(9739,1),
+(9745,1),
+(9752,1),
+(9754,1),
+(9771,1),
+(9823,1),
+(9827,1),
+(9829,1),
+(9830,1),
+(9833,1),
+(9834,1),
+(9835,1),
+(9849,1),
+(9850,1),
+(9866,1),
+(9867,1),
+(9875,1),
+(9876,1),
+(9880,1),
+(9881,1),
+(9892,1),
+(9894,1),
+(9896,1),
+(9904,1),
+(9908,1),
+(9912,1),
+(10148,1),
+(10149,1),
+(10150,1),
+(10151,1),
+(10179,1),
+(10180,1),
+(10181,1),
+(10197,1),
+(10199,1),
+(10205,1),
+(10206,1),
+(10207,1),
+(10211,1),
+(10212,1),
+(10273,1),
+(10274,1),
+(10277,1),
+(10312,1),
+(10313,1),
+(10314,1),
+(10346,1),
+(10391,1),
+(10392,1),
+(10412,1),
+(10413,1),
+(10414,1),
+(10447,1),
+(10448,1),
+(10472,1),
+(10473,1),
+(10578,1),
+(10605,1),
+(10933,1),
+(10934,1),
+(10945,1),
+(10946,1),
+(10947,1),
+(11021,1),
+(11131,1),
+(11197,1),
+(11198,1),
+(11267,1),
+(11268,1),
+(11269,1),
+(11273,1),
+(11274,1),
+(11275,1),
+(11279,1),
+(11280,1),
+(11281,1),
+(11285,1),
+(11286,1),
+(11289,1),
+(11290,1),
+(11293,1),
+(11294,1),
+(11297,1),
+(11299,1),
+(11300,1),
+(11303,1),
+(11366,1),
+(11538,1),
+(11564,1),
+(11565,1),
+(11566,1),
+(11567,1),
+(11572,1),
+(11573,1),
+(11574,1),
+(11578,1),
+(11584,1),
+(11585,1),
+(11596,1),
+(11597,1),
+(11600,1),
+(11601,1),
+(11604,1),
+(11605,1),
+(11608,1),
+(11609,1),
+(11659,1),
+(11660,1),
+(11661,1),
+(11665,1),
+(11667,1),
+(11668,1),
+(11675,1),
+(11699,1),
+(11700,1),
+(11839,1),
+(11921,1),
+(11985,1),
+(11988,1),
+(11989,1),
+(12058,1),
+(12167,1),
+(12280,1),
+(12294,1),
+(12466,1),
+(12471,1),
+(12505,1),
+(12522,1),
+(12523,1),
+(12524,1),
+(12525,1),
+(12526,1),
+(12555,1),
+(12557,1),
+(12611,1),
+(12675,1),
+(12693,1),
+(12737,1),
+(12739,1),
+(12809,1),
+(13140,1),
+(13322,1),
+(13339,1),
+(13340,1),
+(13341,1),
+(13342,1),
+(13374,1),
+(13375,1),
+(13398,1),
+(13438,1),
+(13439,1),
+(13440,1),
+(13441,1),
+(13480,1),
+(13482,1),
+(13491,1),
+(13519,1),
+(13527,1),
+(13549,1),
+(13550,1),
+(13551,1),
+(13552,1),
+(13553,1),
+(13554,1),
+(13555,1),
+(13748,1),
+(13900,1),
+(13901,1),
+(13953,1),
+(14034,1),
+(14105,1),
+(14106,1),
+(14109,1),
+(14112,1),
+(14119,1),
+(14122,1),
+(14145,1),
+(14200,1),
+(14251,1),
+(14260,1),
+(14261,1),
+(14262,1),
+(14263,1),
+(14264,1),
+(14265,1),
+(14266,1),
+(14269,1),
+(14270,1),
+(14271,1),
+(14278,1),
+(14281,1),
+(14282,1),
+(14283,1),
+(14284,1),
+(14285,1),
+(14286,1),
+(14287,1),
+(14288,1),
+(14289,1),
+(14290,1),
+(14443,1),
+(14517,1),
+(14518,1),
+(14873,1),
+(14874,1),
+(14895,1),
+(14902,1),
+(14903,1),
+(14914,1),
+(15040,1),
+(15043,1),
+(15095,1),
+(15117,1),
+(15124,1),
+(15207,1),
+(15208,1),
+(15228,1),
+(15230,1),
+(15232,1),
+(15234,1),
+(15238,1),
+(15242,1),
+(15243,1),
+(15244,1),
+(15249,1),
+(15254,1),
+(15261,1),
+(15262,1),
+(15263,1),
+(15264,1),
+(15265,1),
+(15266,1),
+(15267,1),
+(15284,1),
+(15285,1),
+(15305,1),
+(15407,1),
+(15451,1),
+(15472,1),
+(15496,1),
+(15497,1),
+(15498,1),
+(15530,1),
+(15536,1),
+(15537,1),
+(15547,1),
+(15549,1),
+(15574,1),
+(15575,1),
+(15581,1),
+(15583,1),
+(15598,1),
+(15607,1),
+(15611,1),
+(15612,1),
+(15615,1),
+(15619,1),
+(15620,1),
+(15653,1),
+(15659,1),
+(15662,1),
+(15665,1),
+(15667,1),
+(15668,1),
+(15691,1),
+(15692,1),
+(15735,1),
+(15736,1),
+(15790,1),
+(15791,1),
+(15795,1),
+(15797,1),
+(15801,1),
+(15860,1),
+(15968,1),
+(16000,1),
+(16001,1),
+(16006,1),
+(16033,1),
+(16044,1),
+(16067,1),
+(16100,1),
+(16101,1),
+(16144,1),
+(16243,1),
+(16249,1),
+(16250,1),
+(16375,1),
+(16407,1),
+(16408,1),
+(16409,1),
+(16410,1),
+(16412,1),
+(16413,1),
+(16414,1),
+(16415,1),
+(16430,1),
+(16454,1),
+(16496,1),
+(16511,1),
+(16564,1),
+(16565,1),
+(16570,1),
+(16603,1),
+(16614,1),
+(16697,1),
+(16784,1),
+(16788,1),
+(16790,1),
+(16799,1),
+(16827,1),
+(16828,1),
+(16829,1),
+(16830,1),
+(16831,1),
+(16832,1),
+(16868,1),
+(16908,1),
+(16979,1),
+(16997,1),
+(17008,1),
+(17140,1),
+(17141,1),
+(17142,1),
+(17143,1),
+(17144,1),
+(17147,1),
+(17149,1),
+(17157,1),
+(17171,1),
+(17173,1),
+(17174,1),
+(17198,1),
+(17203,1),
+(17238,1),
+(17243,1),
+(17253,1),
+(17255,1),
+(17256,1),
+(17257,1),
+(17258,1),
+(17259,1),
+(17260,1),
+(17261,1),
+(17273,1),
+(17274,1),
+(17276,1),
+(17281,1),
+(17284,1),
+(17290,1),
+(17311,1),
+(17312,1),
+(17313,1),
+(17314,1),
+(17333,1),
+(17347,1),
+(17348,1),
+(17353,1),
+(17364,1),
+(17393,1),
+(17434,1),
+(17435,1),
+(17483,1),
+(17501,1),
+(17503,1),
+(17509,1),
+(17620,1),
+(17682,1),
+(17745,1),
+(17877,1),
+(17919,1),
+(17920,1),
+(17921,1),
+(17922,1),
+(17923,1),
+(17924,1),
+(17925,1),
+(17926,1),
+(17962,1),
+(17963,1),
+(18081,1),
+(18082,1),
+(18083,1),
+(18084,1),
+(18085,1),
+(18089,1),
+(18091,1),
+(18092,1),
+(18104,1),
+(18105,1),
+(18108,1),
+(18111,1),
+(18138,1),
+(18164,1),
+(18165,1),
+(18187,1),
+(18199,1),
+(18204,1),
+(18205,1),
+(18211,1),
+(18214,1),
+(18217,1),
+(18276,1),
+(18278,1),
+(18392,1),
+(18398,1),
+(18545,1),
+(18557,1),
+(18561,1),
+(18649,1),
+(18651,1),
+(18796,1),
+(18807,1),
+(18809,1),
+(18817,1),
+(18819,1),
+(18833,1),
+(18867,1),
+(18868,1),
+(18869,1),
+(18870,1),
+(18871,1),
+(18980,1),
+(18984,1),
+(19128,1),
+(19260,1),
+(19306,1),
+(19319,1),
+(19386,1),
+(19391,1),
+(19434,1),
+(19463,1),
+(19472,1),
+(19503,1),
+(19632,1),
+(19639,1),
+(19642,1),
+(19701,1),
+(19715,1),
+(19725,1),
+(19728,1),
+(19729,1),
+(19767,1),
+(19777,1),
+(19781,1),
+(19785,1),
+(19801,1),
+(19816,1),
+(19874,1),
+(19881,1),
+(19983,1),
+(20228,1),
+(20240,1),
+(20243,1),
+(20252,1),
+(20276,1),
+(20295,1),
+(20297,1),
+(20298,1),
+(20420,1),
+(20463,1),
+(20535,1),
+(20536,1),
+(20543,1),
+(20559,1),
+(20560,1),
+(20569,1),
+(20605,1),
+(20616,1),
+(20617,1),
+(20627,1),
+(20630,1),
+(20657,1),
+(20658,1),
+(20660,1),
+(20661,1),
+(20662,1),
+(20666,1),
+(20678,1),
+(20684,1),
+(20691,1),
+(20692,1),
+(20695,1),
+(20696,1),
+(20698,1),
+(20714,1),
+(20720,1),
+(20735,1),
+(20736,1),
+(20743,1),
+(20791,1),
+(20792,1),
+(20793,1),
+(20795,1),
+(20797,1),
+(20802,1),
+(20805,1),
+(20806,1),
+(20807,1),
+(20808,1),
+(20811,1),
+(20815,1),
+(20816,1),
+(20819,1),
+(20820,1),
+(20821,1),
+(20822,1),
+(20823,1),
+(20824,1),
+(20825,1),
+(20828,1),
+(20829,1),
+(20831,1),
+(20832,1),
+(20869,1),
+(20883,1),
+(20900,1),
+(20901,1),
+(20902,1),
+(20903,1),
+(20904,1),
+(20909,1),
+(20910,1),
+(21008,1),
+(21027,1),
+(21047,1),
+(21059,1),
+(21071,1),
+(21072,1),
+(21077,1),
+(21141,1),
+(21151,1),
+(21159,1),
+(21162,1),
+(21167,1),
+(21170,1),
+(21343,1),
+(21354,1),
+(21369,1),
+(21390,1),
+(21402,1),
+(21549,1),
+(21551,1),
+(21552,1),
+(21553,1),
+(21667,1),
+(21668,1),
+(21807,1),
+(21832,1),
+(21978,1),
+(22088,1),
+(22121,1),
+(22272,1),
+(22273,1),
+(22336,1),
+(22355,1),
+(22357,1),
+(22411,1),
+(22414,1),
+(22425,1),
+(22427,1),
+(22568,1),
+(22570,1),
+(22574,1),
+(22643,1),
+(22666,1),
+(22677,1),
+(22746,1),
+(22827,1),
+(22828,1),
+(22829,1),
+(22859,1),
+(22878,1),
+(22887,1),
+(22907,1),
+(22908,1),
+(23073,1),
+(23102,1),
+(23106,1),
+(23206,1),
+(23267,1),
+(23391,1),
+(23392,1),
+(23512,1),
+(23592,1),
+(23601,1),
+(23848,1),
+(23850,1),
+(23860,1),
+(23881,1),
+(23892,1),
+(23893,1),
+(23894,1),
+(23922,1),
+(23923,1),
+(23924,1),
+(23925,1),
+(23959,1),
+(23960,1),
+(24042,1),
+(24049,1),
+(24132,1),
+(24133,1),
+(24238,1),
+(24239,1),
+(24248,1),
+(24274,1),
+(24275,1),
+(24300,1),
+(24331,1),
+(24332,1),
+(24334,1),
+(24335,1),
+(24374,1),
+(24393,1),
+(24407,1),
+(24583,1),
+(24585,1),
+(24586,1),
+(24587,1),
+(24619,1),
+(24640,1),
+(24668,1),
+(24680,1),
+(24844,1),
+(24942,1),
+(25008,1),
+(25009,1),
+(25010,1),
+(25011,1),
+(25012,1),
+(25021,1),
+(25052,1),
+(25054,1),
+(25055,1),
+(25174,1),
+(25286,1),
+(25288,1),
+(25294,1),
+(25295,1),
+(25298,1),
+(25300,1),
+(25302,1),
+(25304,1),
+(25306,1),
+(25307,1),
+(25309,1),
+(25345,1),
+(25346,1),
+(25677,1),
+(25686,1),
+(25710,1),
+(25712,1),
+(25783,15),
+(25902,1),
+(25911,1),
+(25912,1),
+(25995,1),
+(26006,1),
+(26098,1),
+(26282,1),
+(26350,1),
+(26616,1),
+(26693,1),
+(27360,1),
+(27552,1),
+(27554,1),
+(27559,1),
+(27567,1),
+(27572,1),
+(27580,1),
+(27581,1),
+(27584,1),
+(27611,1),
+(27615,1),
+(27632,1),
+(27633,1),
+(27794,1),
+(27860,1),
+(28318,1),
+(28412,1),
+(28478,1),
+(28599,1),
+(29070,1),
+(29155,1),
+(29228,1),
+(29317,1),
+(29515,1),
+(30095,1),
+(31016,1),
+(31018,1);
+/*!40000 ALTER TABLE `spell_facing` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed
