@@ -1,17 +1,17 @@
 @echo off
 :quick
 rem Quick install section
-rem This will automatically use the variables below to install the Characters databases without prompting then optimize them and exit
+rem This will automatically use the variables below to install the accounts databases without prompting then optimize them and exit
 rem To use: Set your environment variables below and change 'set quick=off' to 'set quick=on' 
 set quick=off
 if %quick% == off goto standard
-echo (( Mangos Character Database Quick Installer ))
+echo (( Mangos Account Database Quick Installer ))
 rem -- Change the values below to match your server --
 set svr=localhost
 set user=mangos
 set pass=
 set port=3306
-set wdb=mVB0Char
+set wdb=mVB0Account
 rem -- Don't change past this point --
 set yesno=y
 goto install
@@ -45,7 +45,7 @@ set /p pass=What is your MySQL password?            [ ]           :
 if %pass%. == . set pass=
 set /p port=What is your MySQL port?                [3306]        : 
 if %port%. == . set port=3306
-set /p wdb=What is your World database name?       [mVB0Char]      : 
+set /p wdb=What is your World database name?       [mVB0Account]      : 
 if %wdb%. == . set wdb=mVB0Char
 
 :install
@@ -64,11 +64,11 @@ goto :eof
 
 :world
 if %quick% == off echo.
-if %quick% == off echo This will wipe out your current Character database and replace it.
+if %quick% == off echo This will wipe out your current Account database and replace it.
 if %quick% == off set /p yesno=Do you wish to continue? (y/n) 
 
 echo.
-echo Importing Character database
+echo Importing Account database
 
 for %%i in (%dbpath%\*.sql) do echo %%i & %mysql%\mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < %%i
 
