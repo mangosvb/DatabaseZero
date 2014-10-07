@@ -45,7 +45,7 @@ set /p pass=What is your MySQL password?            [ ]           :
 if %pass%. == . set pass=
 set /p port=What is your MySQL port?                [3306]        : 
 if %port%. == . set port=3306
-set /p wdb=What is your World database name?       [mVB0Char]      : 
+set /p wdb=What is your Character database name?       [mVB0Char]      : 
 if %wdb%. == . set wdb=mVB0Char
 
 :install
