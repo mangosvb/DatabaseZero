@@ -1,17 +1,17 @@
 @echo off
 :quick
 rem Quick install section
-rem This will automatically use the variables below to install the Characters databases without prompting then optimize them and exit
+rem This will automatically use the variables below to install the World databases without prompting then optimize them and exit
 rem To use: Set your environment variables below and change 'set quick=off' to 'set quick=on' 
 set quick=off
 if %quick% == off goto standard
-echo (( Mangos Character Database Quick Installer ))
+echo (( Mangos World Database Quick Installer ))
 rem -- Change the values below to match your server --
 set svr=localhost
-set user=mangos
-set pass=
+set user=root
+set pass=rootpass
 set port=3306
-set wdb=mVB0Char
+set wdb=mangosVBworld
 rem -- Don't change past this point --
 set yesno=y
 goto install

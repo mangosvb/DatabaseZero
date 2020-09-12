@@ -8,10 +8,10 @@ if %quick% == off goto standard
 echo (( Mangos Character Database Quick Installer ))
 rem -- Change the values below to match your server --
 set svr=localhost
-set user=mangos
-set pass=
+set user=root
+set pass=rootpass
 set port=3306
-set wdb=mVB0Char
+set wdb=mangosVBcharacters
 rem -- Don't change past this point --
 set yesno=y
 goto install
