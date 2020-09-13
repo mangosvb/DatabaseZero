@@ -1,7 +1,7 @@
 @echo off
 :quick
 rem Quick install section
-rem This will automatically use the variables below to install the Account databases without prompting then optimize them and exit
+rem This will automatically use the variables below to install the Account database without prompting then optimize them and exit
 rem To use: Set your environment variables below and change 'set quick=off' to 'set quick=on' 
 set quick=off
 if %quick% == off goto standard

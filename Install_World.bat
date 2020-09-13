@@ -1,7 +1,7 @@
 @echo off
 :quick
 rem Quick install section
-rem This will automatically use the variables below to install the World databases without prompting then optimize them and exit
+rem This will automatically use the variables below to install the World database without prompting then optimize them and exit
 rem To use: Set your environment variables below and change 'set quick=off' to 'set quick=on' 
 set quick=off
 if %quick% == off goto standard
@@ -64,11 +64,11 @@ goto :eof
 
 :world
 if %quick% == off echo.
-if %quick% == off echo This will wipe out your current Word database and replace it.
+if %quick% == off echo This will wipe out your current World database and replace it.
 if %quick% == off set /p yesno=Do you wish to continue? (y/n) 
 
 echo.
-echo Importing Word database
+echo Importing World database
 
 for %%i in (%dbpath%\*.sql) do echo %%i & %mysql%\mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < %%i
 
