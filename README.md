@@ -12,11 +12,12 @@ How to Install
 -------
 Short instruction:
 
-1. enter _tools directory
+1. Install mysql 5.6+
 
-2. run: make_full_db.bat (if you are doing it under Windows) or run: /bin/sh make_full_db.sh (if you are running
-   it under *nix/Linux)
+2. Create 3 databases for Account, Characters, World
 
-3. apply created file to mangos database, eg.: mysql -u root -p mangos < full_db.sql
+3. Import databases: Install_Account.bat, Install_Characters.bat, Install_World.bat
+
+4. Probably you will be need to apply the latest migrations from MangosVB repo
 
 That's all!
