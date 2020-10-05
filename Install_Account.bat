@@ -11,7 +11,7 @@ set svr=localhost
 set user=root
 set pass=rootpass
 set port=3306
-set wdb=mangosVBaccounts
+set wdb=realmd
 rem -- Don't change past this point --
 set yesno=y
 goto install
@@ -49,8 +49,8 @@ set /p wdb=What is your Account database name?       [mangosVBaccounts]      :
 if %wdb%. == . set wdb=mangosVBaccounts
 
 :install
-set dbpath=sql\Account
-set mysql=mysql
+set dbpath=Realm\Setup
+set mysql=tools
 
 :checkpaths
 if not exist %dbpath% then goto patherror

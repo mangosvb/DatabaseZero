@@ -49,8 +49,8 @@ set /p wdb=What is your World database name?       [mangosVBworld]      :
 if %wdb%. == . set wdb=mangosVBworld
 
 :install
-set dbpath=sql\World
-set mysql=mysql
+set dbpath=World\Setup
+set mysql=tools
 
 :checkpaths
 if not exist %dbpath% then goto patherror

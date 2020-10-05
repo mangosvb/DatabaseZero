@@ -11,7 +11,7 @@ set svr=localhost
 set user=root
 set pass=rootpass
 set port=3306
-set wdb=mangosVBcharacters
+set wdb=character0
 rem -- Don't change past this point --
 set yesno=y
 goto install
@@ -49,8 +49,8 @@ set /p wdb=What is your Characters database name?       [mangosVBcharacters]    
 if %wdb%. == . set wdb=mangosVBcharacters
 
 :install
-set dbpath=sql\Characters
-set mysql=mysql
+set dbpath=Character\Setup
+set mysql=tools
 
 :checkpaths
 if not exist %dbpath% then goto patherror
