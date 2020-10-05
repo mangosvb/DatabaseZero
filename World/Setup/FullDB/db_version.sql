@@ -35,11 +35,9 @@ CREATE TABLE `db_version` (
 LOCK TABLES `db_version` WRITE;
 /*!40000 ALTER TABLE `db_version` DISABLE KEYS */;
 INSERT  INTO `db_version`(`version`,`structure`,`content`,`description`,`comment`) VALUES 
-(1,0,0,'Add_field_comments','Base World Database');
+(21,1,0,'quest_relations','Base World Database');
 /*!40000 ALTER TABLE `db_version` ENABLE KEYS */;
 UNLOCK TABLES;
-
-/*!40000 ALTER TABLE `realmd_db_version` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
