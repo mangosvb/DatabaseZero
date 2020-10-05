@@ -70,7 +70,8 @@ if %quick% == off set /p yesno=Do you wish to continue? (y/n)
 echo.
 echo Importing Account database
 
-for %%i in (%dbpath%\*.sql) do echo %%i & %mysql%\mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < %%i
+REM for %%i in (%dbpath%\*.sql) do echo %%i & %mysql%\mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < %%i
+%mysql%\mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < %dbpath%\realmdLoadDB.sql
 
 :done
 echo.
