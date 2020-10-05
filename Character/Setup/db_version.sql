@@ -35,7 +35,7 @@ CREATE TABLE `db_version` (
 LOCK TABLES `db_version` WRITE;
 /*!40000 ALTER TABLE `db_version` DISABLE KEYS */;
 INSERT  INTO `db_version`(`version`,`structure`,`content`,`description`,`comment`) VALUES 
-(1,0,0,'Add_field_comments','Base World Database');
+(1,0,0,'Add_field_comments','Base Character Database');
 /*!40000 ALTER TABLE `db_version` ENABLE KEYS */;
 UNLOCK TABLES;
 
