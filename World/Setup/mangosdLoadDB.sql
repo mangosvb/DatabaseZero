@@ -6,7 +6,6 @@
 -- the Free Software Foundation; either version 2 of the License, or
 -- (at your option) any later version.
 --
-
 -- This program is distributed in the hope that it will be useful,
 -- but WITHOUT ANY WARRANTY; without even the implied warranty of
 -- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
@@ -42,6 +41,7 @@ CREATE TABLE `db_version` (
   `comment` varchar(150) DEFAULT '' COMMENT 'A comment about the latest database revision.',
   PRIMARY KEY (`version`,`structure`,`content`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT COMMENT='Used DB version notes';
+
 
 --
 -- Table structure for table `areatrigger_tavern`
@@ -128,6 +128,8 @@ CREATE TABLE `battleground_template` (
   `AllianceStartO` float NOT NULL COMMENT 'The orientation of the alliance players upon teleport.',
   `HordeStartLoc` mediumint(8) unsigned NOT NULL COMMENT 'The location where the horde players get teleported to in the battleground.',
   `HordeStartO` float NOT NULL COMMENT 'The orientation of the horde players upon teleport into the battleground.',
+  `StartMaxDist` float NOT NULL DEFAULT '0' COMMENT 'The maximium distance from the start location.',
+  `Comment` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
