@@ -39,7 +39,7 @@ INSERT  INTO `db_version`(`version`,`structure`,`content`,`description`,`comment
 /*!40000 ALTER TABLE `db_version` ENABLE KEYS */;
 UNLOCK TABLES;
 
-/*!40000 ALTER TABLE `realmd_db_version` ENABLE KEYS */;
+/*!40000 ALTER TABLE `db_version` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
