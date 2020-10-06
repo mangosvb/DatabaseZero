@@ -148,6 +148,56 @@ CREATE TABLE `battlemaster_entry` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `creature`
+--
+
+DROP TABLE IF EXISTS `creature`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `creature` (
+  `guid` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'A unique identifier given to each creature to distinguish creatures.',
+  `id` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'The id of the template that is used when instantiating this creature.',
+  `map` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'The map id of the location of the creature (See map.dbc).',
+  `modelid` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'The model id of the the creature. ',
+  `equipment_id` mediumint(9) NOT NULL DEFAULT '0' COMMENT 'The ID of the equipment that the creature is using.',
+  `position_x` float NOT NULL DEFAULT '0' COMMENT 'The x position of the creature.',
+  `position_y` float NOT NULL DEFAULT '0' COMMENT 'The y position of the creature.',
+  `position_z` float NOT NULL DEFAULT '0' COMMENT 'The z position of the creature.',
+  `orientation` float NOT NULL DEFAULT '0' COMMENT 'The orientation of the creature. (North = 0.0; South = pi (3.14159))',
+  `spawntimesecs` int(10) unsigned NOT NULL DEFAULT '120' COMMENT 'The respawn time of the creature in seconds. ',
+  `spawndist` float NOT NULL DEFAULT '5' COMMENT 'The maximum distance that the creature should spawn from its spawn point.',
+  `currentwaypoint` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'The current waypoint of the creature.',
+  `curhealth` int(10) unsigned NOT NULL DEFAULT '1' COMMENT 'The current health of the creature.',
+  `curmana` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'The current mana of the creature.',
+  `DeathState` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'The creature''s death state.',
+  `MovementType` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'The movement type associated with this creature.',
+  PRIMARY KEY (`guid`),
+  KEY `idx_map` (`map`),
+  KEY `index_id` (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=590016 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Creature System';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+/*Table structure for table `spawns_creatures_addon` */
+--
+
+DROP TABLE IF EXISTS `spawns_creatures_addon`;
+
+CREATE TABLE `spawns_creatures_addon` (
+  `spawn_id` int(10) unsigned NOT NULL DEFAULT '0',
+  `spawn_pathid` int(11) unsigned NOT NULL DEFAULT '0',
+  `spawn_mount` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `spawn_bytes0` int(10) unsigned NOT NULL DEFAULT '0',
+  `spawn_bytes1` int(10) unsigned NOT NULL DEFAULT '0',
+  `spawn_bytes2` int(10) unsigned NOT NULL DEFAULT '0',
+  `spawn_emote` int(10) unsigned NOT NULL DEFAULT '0',
+  `spawn_moveflags` int(10) unsigned NOT NULL DEFAULT '0',
+  `spawn_auras` text,
+  PRIMARY KEY (`spawn_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+
 
 --
 -- Table structure for table `creature_equip_template_raw`
@@ -207,7 +257,6 @@ CREATE TABLE `creature_model_info` (
   PRIMARY KEY (`modelid`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Creature System (Model related info)';
 /*!40101 SET character_set_client = @saved_cs_client */;
-
 
 --
 -- Table structure for table `creature_onkill_reputation`
@@ -1661,49 +1710,6 @@ CREATE TABLE `skinning_loot_template` (
   PRIMARY KEY (`entry`,`item`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Loot System';
 /*!40101 SET character_set_client = @saved_cs_client */;
-
-/*Table structure for table `spawns_creatures` */
-
-DROP TABLE IF EXISTS `spawns_creatures`;
-
-CREATE TABLE `spawns_creatures` (
-  `spawn_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Global Unique Identifier',
-  `spawn_entry` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Creature Identifier',
-  `spawn_map` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Map Identifier',
-  `spawn_displayid` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `spawn_equipmentid` mediumint(9) NOT NULL DEFAULT '0',
-  `spawn_positionX` float NOT NULL DEFAULT '0',
-  `spawn_positionY` float NOT NULL DEFAULT '0',
-  `spawn_positionZ` float NOT NULL DEFAULT '0',
-  `spawn_orientation` float NOT NULL DEFAULT '0',
-  `spawn_spawntime` int(10) unsigned NOT NULL DEFAULT '120',
-  `spawn_spawndist` float NOT NULL DEFAULT '5',
-  `spawn_currentwaypoint` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `spawn_curhealth` int(10) unsigned NOT NULL DEFAULT '1',
-  `spawn_curmana` int(10) unsigned NOT NULL DEFAULT '0',
-  `spawn_deathstate` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `spawn_movetype` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`spawn_id`),
-  KEY `idx_map` (`spawn_map`),
-  KEY `idx_id` (`spawn_entry`)
-) ENGINE=MyISAM AUTO_INCREMENT=100001 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Creature System';
-
-/*Table structure for table `spawns_creatures_addon` */
-
-DROP TABLE IF EXISTS `spawns_creatures_addon`;
-
-CREATE TABLE `spawns_creatures_addon` (
-  `spawn_id` int(10) unsigned NOT NULL DEFAULT '0',
-  `spawn_pathid` int(11) unsigned NOT NULL DEFAULT '0',
-  `spawn_mount` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `spawn_bytes0` int(10) unsigned NOT NULL DEFAULT '0',
-  `spawn_bytes1` int(10) unsigned NOT NULL DEFAULT '0',
-  `spawn_bytes2` int(10) unsigned NOT NULL DEFAULT '0',
-  `spawn_emote` int(10) unsigned NOT NULL DEFAULT '0',
-  `spawn_moveflags` int(10) unsigned NOT NULL DEFAULT '0',
-  `spawn_auras` text,
-  PRIMARY KEY (`spawn_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 /*Table structure for table `spawns_gameobjects` */
 
