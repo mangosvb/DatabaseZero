@@ -534,6 +534,34 @@ CREATE TABLE `game_weather` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
+-- Table structure for table `gameobject`
+--
+
+DROP TABLE IF EXISTS `gameobject`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `gameobject` (
+  `guid` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'The unique identifier of the game object spawn.',
+  `id` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'GameObject ID (See gameobject_template.entry).',
+  `map` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'The map id that the game object is located on (See map.dbc).',
+  `position_x` float NOT NULL DEFAULT '0' COMMENT 'The x location of the game object.',
+  `position_y` float NOT NULL DEFAULT '0' COMMENT 'The y location of the game object.',
+  `position_z` float NOT NULL DEFAULT '0' COMMENT 'The z location of the game object.',
+  `orientation` float NOT NULL DEFAULT '0' COMMENT 'The orientation of the game object.',
+  `rotation0` float NOT NULL DEFAULT '0' COMMENT 'The amount of rotation of an object along one of the axis.',
+  `rotation1` float NOT NULL DEFAULT '0' COMMENT 'The amount of rotation of an object along one of the axis.',
+  `rotation2` float NOT NULL DEFAULT '0' COMMENT 'The amount of rotation of an object along one of the axis.',
+  `rotation3` float NOT NULL DEFAULT '0' COMMENT 'The amount of rotation of an object along one of the axis.',
+  `spawntimesecs` int(11) NOT NULL DEFAULT '0' COMMENT 'The respawn time for the game object, defined in seconds till respawn.',
+  `animprogress` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'Not really known what this is used for at this time (see description).',
+  `state` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  PRIMARY KEY (`guid`),
+  KEY `idx_map` (`map`),
+  KEY `idx_id` (`id`)
+) ENGINE=MySAM AUTO_INCREMENT=632463 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Gameobject System';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `gameobject_loot_template`
 --
 
@@ -1712,27 +1740,6 @@ CREATE TABLE `skinning_loot_template` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Loot System';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `spawns_gameobjects` */
-
-DROP TABLE IF EXISTS `spawns_gameobjects`;
-
-CREATE TABLE `spawns_gameobjects` (
-  `spawn_id` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Global Unique Identifier',
-  `spawn_entry` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Gameobject Identifier',
-  `spawn_map` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Map Identifier',
-  `spawn_positionX` float NOT NULL DEFAULT '0',
-  `spawn_positionY` float NOT NULL DEFAULT '0',
-  `spawn_positionZ` float NOT NULL DEFAULT '0',
-  `spawn_orientation` float NOT NULL DEFAULT '0',
-  `spawn_rotation0` float NOT NULL DEFAULT '0',
-  `spawn_rotation1` float NOT NULL DEFAULT '0',
-  `spawn_rotation2` float NOT NULL DEFAULT '0',
-  `spawn_rotation3` float NOT NULL DEFAULT '0',
-  `spawn_spawntime` int(11) NOT NULL DEFAULT '0',
-  `spawn_animprogress` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `spawn_state` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  PRIMARY KEY (`spawn_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=230923 DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Gameobject System';
 
 --
 -- Table structure for table `spell_chain`
