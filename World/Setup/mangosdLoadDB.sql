@@ -584,15 +584,14 @@ CREATE TABLE `gameobject_loot_template` (
 -- Table structure for table `gameobject_template`
 --
 
-DROP TABLE IF EXISTS `gameobjects`;
+DROP TABLE IF EXISTS `gameobject_template`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `gameobjects` (
+CREATE TABLE `gameobject_template` (
   `entry` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Id of the gameobject template',
   `type` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'GameObject Type',
   `displayId` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'A display model identifier for the Item.',
   `name` varchar(100) NOT NULL DEFAULT '' COMMENT 'Object''s Name',
-  `castBarCaption` varchar(100) NOT NULL DEFAULT '',
   `faction` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'Object''s faction, if any. (See FactionTemplate.dbc)',
   `flags` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'GameObject Flag',
   `size` float NOT NULL DEFAULT '1' COMMENT 'Object''s size must be set because graphic models can be resample.',
@@ -620,9 +619,9 @@ CREATE TABLE `gameobjects` (
   `data21` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'The content of the data fields depends on the gameobject type',
   `data22` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'The content of the data fields depends on the gameobject type',
   `data23` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'The content of the data fields depends on the gameobject type',
-  `ScriptName` varchar(64) NOT NULL DEFAULT '',
-  PRIMARY KEY (`entry`),
-  KEY `idx_name` (`name`)
+  `mingold` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'DEPRECATED: Defines money looted from the game object.',
+  `maxgold` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'DEPRECATED: Defines money looted from the game object.',
+  PRIMARY KEY (`entry`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Gameobject System';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
