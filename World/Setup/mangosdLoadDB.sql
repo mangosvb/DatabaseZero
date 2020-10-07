@@ -280,78 +280,90 @@ CREATE TABLE `creature_onkill_reputation` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Creature OnKill Reputation gain';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
-/*Table structure for table `creatures` */
+--
+-- Table structure for table `creature_template`
+--
 
-DROP TABLE IF EXISTS `creatures`;
-
-CREATE TABLE `creatures` (
-  `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `modelid_A` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `modelid_A2` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `modelid_H` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `modelid_H2` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `name` char(100) NOT NULL DEFAULT '0',
-  `subname` char(100) DEFAULT NULL,
-  `IconName` char(100) DEFAULT NULL,
-  `minlevel` tinyint(3) unsigned NOT NULL DEFAULT '1',
-  `maxlevel` tinyint(3) unsigned NOT NULL DEFAULT '1',
-  `minhealth` int(10) unsigned NOT NULL DEFAULT '0',
-  `maxhealth` int(10) unsigned NOT NULL DEFAULT '0',
-  `minmana` int(10) unsigned NOT NULL DEFAULT '0',
-  `maxmana` int(10) unsigned NOT NULL DEFAULT '0',
-  `armor` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `faction_A` smallint(5) unsigned NOT NULL DEFAULT '0',
-  `faction_H` smallint(5) unsigned NOT NULL DEFAULT '0',
-  `npcflag` int(10) unsigned NOT NULL DEFAULT '0',
-  `speed` float DEFAULT '1',
-  `scale` float NOT NULL DEFAULT '1',
-  `rank` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `mindmg` float NOT NULL DEFAULT '0',
-  `maxdmg` float NOT NULL DEFAULT '0',
-  `dmgschool` tinyint(4) NOT NULL DEFAULT '0',
-  `attackpower` int(10) unsigned NOT NULL DEFAULT '0',
-  `baseattacktime` int(10) unsigned NOT NULL DEFAULT '0',
-  `rangeattacktime` int(10) unsigned NOT NULL DEFAULT '0',
-  `unit_flags` int(10) unsigned NOT NULL DEFAULT '0',
-  `dynamicflags` int(10) unsigned NOT NULL DEFAULT '0',
-  `family` tinyint(4) NOT NULL DEFAULT '0',
-  `trainer_type` tinyint(4) NOT NULL DEFAULT '0',
-  `trainer_spell` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `class` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `race` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `minrangedmg` float NOT NULL DEFAULT '0',
-  `maxrangedmg` float NOT NULL DEFAULT '0',
-  `rangedattackpower` smallint(5) unsigned NOT NULL DEFAULT '0',
-  `type` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `type_flags` int(10) unsigned NOT NULL DEFAULT '0',
-  `lootid` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `pickpocketloot` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `skinloot` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `resistance1` smallint(5) NOT NULL DEFAULT '0',
-  `resistance2` smallint(5) NOT NULL DEFAULT '0',
-  `resistance3` smallint(5) NOT NULL DEFAULT '0',
-  `resistance4` smallint(5) NOT NULL DEFAULT '0',
-  `resistance5` smallint(5) NOT NULL DEFAULT '0',
-  `resistance6` smallint(5) NOT NULL DEFAULT '0',
-  `spell1` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `spell2` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `spell3` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `spell4` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `PetSpellDataId` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `mingold` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `maxgold` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `AIName` char(64) NOT NULL DEFAULT '',
-  `MovementType` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `InhabitType` tinyint(3) unsigned NOT NULL DEFAULT '3',
-  `RacialLeader` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `RegenHealth` tinyint(3) unsigned NOT NULL DEFAULT '1',
-  `equipment_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `mechanic_immune_mask` int(10) unsigned NOT NULL DEFAULT '0',
-  `flags_extra` int(10) unsigned NOT NULL DEFAULT '0',
-  `ScriptName` char(64) NOT NULL DEFAULT '',
-  PRIMARY KEY (`entry`),
-  KEY `idx_name` (`name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Creature System';
+DROP TABLE IF EXISTS `creature_template`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `creature_template` (
+  `Entry` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'This is the Primary NPC Entry Number and is Also the Dungeon Normal Mode / Raid ',
+  `Name` char(100) NOT NULL DEFAULT '' COMMENT 'The creature''s name that will be displayed.',
+  `SubName` char(100) DEFAULT NULL COMMENT 'An optional tag, which will be shown below the creature''s name.',
+  `MinLevel` tinyint(3) unsigned NOT NULL DEFAULT '1' COMMENT 'The minimum level of the creature when it is spawned in-game.',
+  `MaxLevel` tinyint(3) unsigned NOT NULL DEFAULT '1' COMMENT 'The maximum level of the creature when it is spawned in-game.',
+  `ModelId1` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'A display model identifier for the creature_template.',
+  `ModelId2` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'An alternative display model identifier for the creature_template.',
+  `ModelId3` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `ModelId4` mediumint(8) unsigned NOT NULL DEFAULT '0',
+  `FactionAlliance` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'The Faction If The Creature Is On The Alliance Side (See FactionTemplate.dbc).',
+  `FactionHorde` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'The Faction If The Creature Is On The Alliance Side (See FactionTemplate.dbc).',
+  `Scale` float NOT NULL DEFAULT '1' COMMENT 'The scale/size of the creature.<br />\nNormal => 1 (100%)',
+  `Family` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'This Defines The Family That This Creature Belongs To.',
+  `CreatureType` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'This Field Defines The Type Of Creature This NPC Is.',
+  `InhabitType` tinyint(3) unsigned NOT NULL DEFAULT '3' COMMENT 'This Field Controls Where The Creature Can Move Into, Chase And Attack.',
+  `RegenerateStats` tinyint(3) unsigned DEFAULT NULL COMMENT 'Controls if a creature template should regenerate it''s Health/Mana.',
+  `RacialLeader` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'Determines if a creature template is a racial leader.',
+  `NpcFlags` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'The flags of the creature.\n',
+  `UnitFlags` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Allows the manual application of unit flags to creatures.',
+  `DynamicFlags` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Dynamic flags are used to control the visual appearance of a creature template.',
+  `ExtraFlags` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'The extra flags allow to modify special behaviour for a creature_template. ',
+  `CreatureTypeFlags` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Type flags seem to control what actions a player can perform.',
+  `SpeedWalk` float NOT NULL DEFAULT '1' COMMENT 'Controls how fast the creature can move in walking mode.',
+  `SpeedRun` float NOT NULL DEFAULT '1.14286' COMMENT 'Controls how fast the creature can move in running mode.',
+  `UnitClass` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'A creature''s class. The following table describes the available classes.',
+  `Rank` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'The border of a creature portrait.',
+  `HealthMultiplier` float NOT NULL DEFAULT '1' COMMENT 'Modifies the creature template''s health by this factor.',
+  `PowerMultiplier` float NOT NULL DEFAULT '1' COMMENT 'The affects the creature''s power.',
+  `DamageMultiplier` float NOT NULL DEFAULT '1' COMMENT 'This affects the amount of damage a creature can do.',
+  `DamageVariance` float NOT NULL DEFAULT '1' COMMENT 'This is used in damage calculations.',
+  `ArmorMultiplier` float NOT NULL DEFAULT '1' COMMENT 'Modify the creature template''s armor by this factor.',
+  `ExperienceMultiplier` float NOT NULL DEFAULT '1' COMMENT 'This affects the amount of experience the creature will earn.',
+  `MinLevelHealth` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'The minimum health of the creature.',
+  `MaxLevelHealth` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'The maximum health of the creature.',
+  `MinLevelMana` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'The miminum mana of the creature if the creature has variable mana.',
+  `MaxLevelMana` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'The maximum mana of the creature.',
+  `MinMeleeDmg` float NOT NULL DEFAULT '0' COMMENT 'Minimum damage the creature deals in melee combat.',
+  `MaxMeleeDmg` float NOT NULL DEFAULT '0' COMMENT 'Maximum damage the creature deals in melee combat.',
+  `MinRangedDmg` float NOT NULL DEFAULT '0' COMMENT 'Minimum damage the creature deals in ranged combat.',
+  `MaxRangedDmg` float NOT NULL DEFAULT '0' COMMENT 'Maximum damage the creature deals in ranged combat.',
+  `Armor` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'The total armor of the creature.',
+  `MeleeAttackPower` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'The attack power for the creature''s melee attacks.',
+  `RangedAttackPower` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'The attack power for the creature''s ranged attacks.',
+  `MeleeBaseAttackTime` int(10) unsigned NOT NULL DEFAULT '2000' COMMENT 'A creature''s melee attack time in milliseconds.',
+  `RangedBaseAttackTime` int(10) unsigned NOT NULL DEFAULT '2000' COMMENT 'The delay between ranged attacks, in milliseconds.',
+  `DamageSchool` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'A damage school for melee combat.',
+  `MinLootGold` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Minimum money the creature drops when killed, in copper.',
+  `MaxLootGold` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'The money dropped by the creature in copper.',
+  `LootId` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'This adds loot to the creature.',
+  `PickpocketLootId` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'This adds pickpocket loot to the creature.',
+  `SkinningLootId` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'This adds skinning loot to the creature.',
+  `KillCredit1` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'If killing a creature should credit towards a different creature_template.',
+  `KillCredit2` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'If killing a creature should credit towards a different creature_template.',
+  `MechanicImmuneMask` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'This mask can be used to make creatures immune to spell mechanics.',
+  `SchoolImmuneMask` int(10) unsigned NOT NULL DEFAULT '0',
+  `ResistanceHoly` smallint(5) NOT NULL DEFAULT '0' COMMENT 'The Holy resistance of the creature.',
+  `ResistanceFire` smallint(5) NOT NULL DEFAULT '0' COMMENT 'The Fire resistance of the creature.',
+  `ResistanceNature` smallint(5) NOT NULL DEFAULT '0' COMMENT 'The Nature resistance of the creature.',
+  `ResistanceFrost` smallint(5) NOT NULL DEFAULT '0' COMMENT 'The Frost resistance of the creature.',
+  `ResistanceShadow` smallint(5) NOT NULL DEFAULT '0' COMMENT 'The Shadow resistance of the creature.',
+  `ResistanceArcane` smallint(5) NOT NULL DEFAULT '0' COMMENT 'The Arcane resistance of the creature.',
+  `PetSpellDataId` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'ID that displays what spells the pet has in the client.',
+  `MovementType` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'The movement type defines what a creature spawn will behave like after spawning.',
+  `TrainerType` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'This details what kind of trainer the creature is.',
+  `TrainerSpell` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'This will restrict access to a profession trainer.',
+  `TrainerClass` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'The value of this field will restrict access to class and/or pet trainers',
+  `TrainerRace` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'This field allows to restrict a riding trainer to a specific race.',
+  `TrainerTemplateId` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'This field adds a training spells to a creature template.',
+  `VendorTemplateId` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'This field adds a vendor items to a creature template.',
+  `GossipMenuId` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'This field is used for adding gossip to the creature.',
+  `EquipmentTemplateId` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'The field adds equipment to a creature.',
+  `Civilian` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'Marks a creature template as a civilian.',
+  `AIName` char(64) DEFAULT '' COMMENT 'This string determines which built-in AI script will be used.',
+  PRIMARY KEY (`Entry`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Creature System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 
 
@@ -637,6 +649,20 @@ CREATE TABLE `instances` (
   PRIMARY KEY (`instance_id`,`instance_map`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Table structure for table `item_enchantment_template`
+--
+
+DROP TABLE IF EXISTS `item_enchantment_template`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `item_enchantment_template` (
+  `entry` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Random property type (See item_template.RandomProperty).',
+  `ench` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Enchantment type (See ItemRandomProperties.dbc).',
+  `chance` float unsigned NOT NULL DEFAULT '0' COMMENT 'Chance to get the enchantment (%).',
+  PRIMARY KEY (`entry`,`ench`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Item Random Enchantment System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `item_loot_template`
@@ -1306,6 +1332,23 @@ CREATE TABLE `npc_trainer` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `npc_trainer_template`
+--
+
+DROP TABLE IF EXISTS `npc_trainer_template`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `npc_trainer_template` (
+  `entry` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'The unique identifier for the training template.',
+  `spell` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'The spell identifier. . ',
+  `spellcost` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'The cost that the player needs to pay in order to learn the spell in copper.',
+  `reqskill` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'The required skill to be able to learn the spell.',
+  `reqskillvalue` smallint(5) unsigned NOT NULL DEFAULT '0' COMMENT 'The minimum skill level required for the skill referenced in reqskill.',
+  `reqlevel` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'The character level required in order to learn the spell.',
+  UNIQUE KEY `entry_spell` (`entry`,`spell`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `npc_vendor`
@@ -1324,6 +1367,22 @@ CREATE TABLE `npc_vendor` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Npc System';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `npc_vendor_template`
+--
+
+DROP TABLE IF EXISTS `npc_vendor_template`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `npc_vendor_template` (
+  `entry` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'The unique identifier for the vending template.',
+  `item` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Template ID of the item. ',
+  `maxcount` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'The maximum amount of the item a vendor should carry',
+  `incrtime` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'How frequently a vendor will restock an item having a maximum count. ',
+  `condition_id` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'This references the conditions tables unique ID for which the entry is valid.',
+  PRIMARY KEY (`entry`,`item`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Npc System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `page_text`
@@ -1340,6 +1399,60 @@ CREATE TABLE `page_text` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Item System';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+--
+-- Table structure for table `pet_levelstats`
+--
+
+DROP TABLE IF EXISTS `pet_levelstats`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pet_levelstats` (
+  `creature_entry` mediumint(8) unsigned NOT NULL COMMENT 'Creature ID (See creature_template.entry).',
+  `level` tinyint(3) unsigned NOT NULL COMMENT 'Pet level.',
+  `hp` smallint(5) unsigned NOT NULL COMMENT 'Pet HP at the level.',
+  `mana` smallint(5) unsigned NOT NULL COMMENT 'Pet MP at the level.',
+  `armor` int(10) unsigned NOT NULL DEFAULT '0' COMMENT 'Pet armor at the level.',
+  `str` smallint(5) unsigned NOT NULL COMMENT 'Pet strength at the level.',
+  `agi` smallint(5) unsigned NOT NULL COMMENT 'Pet agility at the level.',
+  `sta` smallint(5) unsigned NOT NULL COMMENT 'Pet stamina at the level.',
+  `inte` smallint(5) unsigned NOT NULL COMMENT 'Pet intellect at the level.',
+  `spi` smallint(5) unsigned NOT NULL COMMENT 'Pet spirit at the level.',
+  PRIMARY KEY (`creature_entry`,`level`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 PACK_KEYS=0 COMMENT='Stores pet levels stats.';
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `pet_name_generation`
+--
+
+DROP TABLE IF EXISTS `pet_name_generation`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `pet_name_generation` (
+  `id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT COMMENT 'Table index.',
+  `word` tinytext NOT NULL COMMENT 'Part of the name.',
+  `entry` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Creature ID (See creature_template.entry).',
+  `half` tinyint(4) NOT NULL DEFAULT '0' COMMENT 'Type of the word.',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=261 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `petcreateinfo_spell`
+--
+
+DROP TABLE IF EXISTS `petcreateinfo_spell`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `petcreateinfo_spell` (
+  `entry` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'This references the creature_template tables unique ID.',
+  `Spell1` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'The spell identifier.',
+  `Spell2` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'The spell identifier.',
+  `Spell3` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'The spell identifier.',
+  `Spell4` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'The spell identifier.',
+  PRIMARY KEY (`entry`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Pet Create Spells';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `pickpocketing_loot_template`
@@ -1525,6 +1638,20 @@ CREATE TABLE `quest_mail_loot` (
   PRIMARY KEY (`entry`,`item`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Loot System';
 
+--
+-- Table structure for table `quest_relations`
+--
+
+DROP TABLE IF EXISTS `quest_relations`;
+
+CREATE TABLE `quest_relations` (
+  `actor` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'The Entity involved in the quest',
+  `entry` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'Creature or GO entr',
+  `quest` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'Quest ID',
+  `role` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'Role of the actor',
+  PRIMARY KEY (`entry`,`quest`,`role`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 /*Table structure for table `quests` */
 
 DROP TABLE IF EXISTS `quests`;
@@ -1656,36 +1783,25 @@ CREATE TABLE `quests` (
   PRIMARY KEY (`entry`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COMMENT='Quest System';
 /*!40101 SET character_set_client = @saved_cs_client */;
+
 --
--- Table structure for table `quest_relations`
+-- Table structure for table `reference_loot_template`
 --
 
-DROP TABLE IF EXISTS `quest_relations`;
-
-CREATE TABLE `quest_relations` (
-  `actor` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'The Entity involved in the quest',
-  `entry` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'Creature or GO entr',
-  `quest` int(11) unsigned NOT NULL DEFAULT '0' COMMENT 'Quest ID',
-  `role` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'Role of the actor',
-  PRIMARY KEY (`entry`,`quest`,`role`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-/*Table structure for table `reference_loot` */
-
-DROP TABLE IF EXISTS `reference_loot`;
-
-CREATE TABLE `reference_loot` (
-  `entry` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `item` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `ChanceOrQuestChance` float NOT NULL DEFAULT '100',
-  `groupid` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `mincountOrRef` mediumint(9) NOT NULL DEFAULT '1',
-  `maxcount` tinyint(3) unsigned NOT NULL DEFAULT '1',
-  `lootcondition` tinyint(3) unsigned NOT NULL DEFAULT '0',
-  `condition_value1` mediumint(8) unsigned NOT NULL DEFAULT '0',
-  `condition_value2` mediumint(8) unsigned NOT NULL DEFAULT '0',
+DROP TABLE IF EXISTS `reference_loot_template`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `reference_loot_template` (
+  `entry` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'The ID of the loot definition (loot template).',
+  `item` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Template ID of the item which can be included into the loot.',
+  `ChanceOrQuestChance` float NOT NULL DEFAULT '100' COMMENT 'Meaning of that field is a bit different depending on its sign.',
+  `groupid` tinyint(3) unsigned NOT NULL DEFAULT '0' COMMENT 'A group is a set of loot definitions.',
+  `mincountOrRef` mediumint(9) NOT NULL DEFAULT '1' COMMENT 'The total number of copies of an item or may reference another loot template',
+  `maxcount` tinyint(3) unsigned NOT NULL DEFAULT '1' COMMENT 'For non-reference entries - the maximum number of copies of the item.',
+  `condition_id` mediumint(8) unsigned NOT NULL DEFAULT '0' COMMENT 'Value that represents a loot condition that must be filled.',
   PRIMARY KEY (`entry`,`item`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=FIXED COMMENT='Loot System';
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC COMMENT='Loot System';
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `reference_loot_template`
