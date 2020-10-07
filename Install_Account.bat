@@ -72,7 +72,7 @@ echo Importing Account database
 
 REM for %%i in (%dbpath%\*.sql) do echo %%i & %mysql%\mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < %%i
 %mysql%\mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < %dbpath%\realmdLoadDB.sql
-
+%mysql%\mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Tools\updateRealm.sql
 :done
 echo.
 echo Done :)
