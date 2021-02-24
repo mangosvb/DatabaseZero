@@ -1,32 +1,113 @@
-DatabaseZero
-============
+[<img src='https://www.getmangos.eu/!assets_mangos/currentlogo.gif' width="48" border=0>](https://www.getmangos.eu)
+[<img src='https://www.getmangos.eu/!assets_mangos/logo.png' border=0>](https://www.getmangos.eu)
+ <br><b>Repository Status:</b> 
+[<img src='https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat' border=0 valign="middle"/>](http://makeapullrequest.com)
+[<img src='https://img.shields.io/discord/286167585270005763.svg' border=0 valign="middle"/>](https://discord.gg/fPxMjHS8xs "Our community hub on Discord")
+
+---
+
+[<img src="https://www.getmangos.eu/!assets_mangos/Mangos0.png" width="48" valign="middle"/>](http://getmangos.eu)
+ **MangosVB0 / MangosSharp0 - Vanilla WoW Database**
+===
+
+This is the database to support the MangosVB0 & MangosSharp0 servers.
+
+It aims to be 100% compatible with the 3 final versions of Vanilla [World of Warcraft][2], 
+namely [patch 1.12.1][4], [patch 1.12.2][5] & [patch 1.12.3][6].
+<br>**IT DOES NOT SUPPORT 1.13.x** and beyond which is the newly released Classic Experience (NuClassic).
+
+Dependencies
+------------
+The server stands on the shoulders of several well-known Open Source libraries plus
+a few awesome, but less known libraries to prevent us from inventing the wheel again.
+
+**Please note that Linux and Mac OS X users should install packages using
+their systems package management instead of source packages.**
+
+* **[MySQL][40]** / **[MariaDB][41]**: These databases are used to store content and user data.
+
+<br>We have a small, but extremely friendly and helpful community managed by MadMax and Antz.
+<br>Any trolling or unpleasantness is swiftly dealt with !!
+* Our discord/forum motto is "Be nice or Be somewhere else"
+
+**Official Website**
+----
+
+We welcome anyone who is interested in enjoying older versions of wow or contributing and helping out !
+
+* [**Official MaNGOS Website**](https://getmangos.eu/)  
+
+**Discord Server**
+----
+
+We also have a Discord server where many of us hang out and discuss Mangos related stuff.
+
+* [**Discord Server**](https://discord.gg/fPxMjHS8xs) 
+
+**Main Wiki**
+----
+
+The repository of as much information as we can pack in. Details regarding the Database, file type definitions, packet definitons etc.
+
+* [**Wiki Table of Contents**](http://getmangos.eu/wiki)  
+
+
+**Bug / Issue Tracker**
+----
+
+Found an issue or something which doesn't seem right, please log it in the relevant section of the Bug Tracker.
+
+* [**Bug Tracker**](https://www.getmangos.eu/bug-tracker/mangos-zero/)
+
+**How to Install**
+----
+
+**Linux**
+
+Run: `InstallDatabases.sh` and follow the onscreen prompts.
+
+**Windows**
+
+Run: `InstallDatabases.bat` and follow the onscreen prompts.
+
+**Installation Guides**
+----
+
+More comprehensive Installation instructions for various operation systems can be found here.
+
+* [**Installation Guides**](https://www.getmangos.eu/wiki/documentation/installation-guides/) 
+
 
 License
 -------
-**ServerZero Database** is released under the Creative Commons Attribution-NonCommercial-ShareAlike 3.0.
-The file (`LICENSE.md`) **must** be a part of any redistributable packages
-made from this software.  No licenses should be removed from this software if
-you are making redistributable copies.
+This program is free software; you can redistribute it and/or modify it under
+the terms of the GNU General Public License as published by the Free Software
+Foundation; either version 2 of the License, or (at your option) any later
+version.
 
-IMPORTANT NOTE
-==============
-	Since this repository now uses submodules, please ensure you clone using the --recursive flag
+This program is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.  See the GNU General Public License for more details.
 
-	e.g.
+You should have received a copy of the GNU General Public License along with
+this program; if not, write to the Free Software Foundation, Inc., 51 Franklin
+Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-	git clone https://github.com/mangosvb/DatabaseZero --recursive
+The full license is included in the file [LICENSE](LICENSE).
 
+We have all put in hundreds of hours of time for free to make the server what it
+is today.
+<br>All we ask is that if you modify the code and make improvements, please have
+the decency to feed those changes back to us.
 
-How to Install
--------
-Short instruction:
+Acknowledgements
+--------
+World of Warcraft, and all related art, images, and lore are copyright [Blizzard Entertainment, Inc.][1]
 
-1. Install mysql 5.7+
-
-2. Create 3 databases for Account, Characters, World
-
-3. Import databases: Install_Account.bat, Install_Characters.bat, Install_World.bat
-
-4. Probably you will be need to apply the latest migrations from MangosVB repo
-
-That's all!
+[1]: http://blizzard.com/ "Blizzard Entertainment Inc. · we love you!"
+[2]: https://worldofwarcraft.com/ "World of Warcraft"
+[4]: http://www.wowpedia.org/Patch_1.12.1 "Vanilla WoW · Patch 1.12.1 release notes"
+[5]: http://www.wowpedia.org/Patch_1.12.2 "Vanilla WoW · Patch 1.12.2 release notes"
+[6]: http://www.wowpedia.org/Patch_1.12.3 "Vanilla WoW · Patch 1.12.3 release notes"
+[40]: http://www.mysql.com/ "MySQL · The world's most popular open source database"
+[41]: http://www.mariadb.org/ "MariaDB · An enhanced, drop-in replacement for MySQL"
