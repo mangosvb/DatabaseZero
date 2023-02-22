@@ -2,16 +2,20 @@
 :quick
 rem Quick install section
 rem This will automatically use the variables below to install the World database without prompting then optimize them and exit
-rem To use: Set your environment variables below and change 'set quick=off' to 'set quick=on' 
-set quick=off
+rem To use: Configure and run Install_Quick.bat, or set your environment variables below, change 'set quick=off' to 'set quick=on', and run this individual file instead.
+IF NOT DEFINED quick set quick=off
+IF NOT DEFINED skipPause set skipPause=off
+IF NOT DEFINED skipDone set skipDone=off
 if %quick% == off goto standard
 echo (( Mangos World Database Quick Installer ))
 rem -- Change the values below to match your server --
-set svr=localhost
-set user=root
-set pass=rootpass
-set port=3306
-set wdb=mangosVBworld
+IF NOT DEFINED DEBUG set DEBUG=NO
+IF NOT DEFINED svr set svr=localhost
+IF NOT DEFINED user set user=root
+IF NOT DEFINED pass set pass=rootpass
+IF NOT DEFINED port set port=3306
+REM IF NOT DEFINED wdb set wdb=mangosVBworld
+IF NOT DEFINED wdb set wdb=mangos0
 rem -- Don't change past this point --
 set yesno=y
 goto install
@@ -50,11 +54,17 @@ if %wdb%. == . set wdb=mangosVBworld
 
 :install
 set dbpath=World\Setup
-set mysql=tools
+IF NOT DEFINED mysqlDir set mysqlDir=tools
+IF NOT DEFINED mysqlExeName set mysqlExeName=mysql.exe
+set mysqlExePath=%mysqlDir%\%mysqlExeName%
+IF NOT DEFINED mysqlConnectionOptions set mysqlConnectionOptions=-h %svr% --user=%user% --password=%pass% --port=%port%
+IF NOT DEFINED mysqlConnectionOtherOptions set mysqlConnectionOtherOptions=-q -s
+IF NOT DEFINED mysqlConnectionString set mysqlConnectionString=%mysqlExePath% %mysqlConnectionOptions% %mysqlConnectionOtherOptions%
+IF %DEBUG%==YES echo mysqlConnectionString: %mysqlConnectionString%
 
 :checkpaths
-if not exist %dbpath% then goto patherror
-if not exist %mysql%\mysql.exe then goto patherror
+if not exist %dbpath% goto patherror
+if not exist %mysqlExePath% goto patherror
 goto world
 
 :patherror
@@ -70,11 +80,14 @@ if %quick% == off set /p yesno=Do you wish to continue? (y/n)
 echo.
 echo Importing World database
 
-%mysql%\mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < %dbpath%\mangosdLoadDB.sql
-for %%i in (%dbpath%\FullDB\*.sql) do echo %%i & %mysql%\mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < %%i
+%mysqlConnectionString% < Tools\mangosdCreateDB.sql
+REM for %%i in (%dbpath%\FullDB\*.sql) do echo %%i & %mysqlConnectionString% %wdb% < %%i
+%mysqlConnectionString% %wdb% < %dbpath%\mangosdLoadDB.sql
 
 :done
-echo.
-echo Done :)
-echo.
-pause
+IF NOT "%skipPause%"=="on" (
+  echo.
+  echo Done :)
+  echo.
+)
+IF NOT "%skipPause%"=="on" pause

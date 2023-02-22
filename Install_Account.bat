@@ -2,16 +2,19 @@
 :quick
 rem Quick install section
 rem This will automatically use the variables below to install the Account database without prompting then optimize them and exit
-rem To use: Set your environment variables below and change 'set quick=off' to 'set quick=on' 
-set quick=off
+rem To use: Configure and run Install_Quick.bat, or set your environment variables below, change 'set quick=off' to 'set quick=on', and run this individual file instead.
+IF NOT DEFINED quick set quick=off
+IF NOT DEFINED skipPause set skipPause=off
+IF NOT DEFINED skipDone set skipDone=off
 if %quick% == off goto standard
 echo (( Mangos Account Database Quick Installer ))
 rem -- Change the values below to match your server --
-set svr=localhost
-set user=root
-set pass=rootpass
-set port=3306
-set wdb=realmd
+IF NOT DEFINED DEBUG set DEBUG=NO
+IF NOT DEFINED svr set svr=localhost
+IF NOT DEFINED user set user=root
+IF NOT DEFINED pass set pass=rootpass
+IF NOT DEFINED port set port=3306
+IF NOT DEFINED adb set adb=realmd
 rem -- Don't change past this point --
 set yesno=y
 goto install
@@ -45,16 +48,22 @@ set /p pass=What is your MySQL password?            [rootpass]           :
 if %pass%. == . set pass=rootpass
 set /p port=What is your MySQL port?                [3306]        : 
 if %port%. == . set port=3306
-set /p wdb=What is your Account database name?       [mangosVBaccounts]      : 
-if %wdb%. == . set wdb=mangosVBaccounts
+set /p adb=What is your Account database name?       [mangosVBaccounts]      : 
+if %adb%. == . set adb=mangosVBaccounts
 
 :install
 set dbpath=Realm\Setup
-set mysql=tools
+IF NOT DEFINED mysqlDir set mysqlDir=tools
+IF NOT DEFINED mysqlExeName set mysqlExeName=mysql.exe
+set mysqlExePath=%mysqlDir%\%mysqlExeName%
+IF NOT DEFINED mysqlConnectionOptions set mysqlConnectionOptions=-h %svr% --user=%user% --password=%pass% --port=%port%
+IF NOT DEFINED mysqlConnectionOtherOptions set mysqlConnectionOtherOptions=-q -s
+IF NOT DEFINED mysqlConnectionString set mysqlConnectionString=%mysqlExePath% %mysqlConnectionOptions% %mysqlConnectionOtherOptions%
+IF %DEBUG%==YES echo mysqlConnectionString: %mysqlConnectionString%
 
 :checkpaths
-if not exist %dbpath% then goto patherror
-if not exist %mysql%\mysql.exe then goto patherror
+if not exist %dbpath% goto patherror
+if not exist %mysqlExePath% goto patherror
 goto world
 
 :patherror
@@ -70,11 +79,14 @@ if %quick% == off set /p yesno=Do you wish to continue? (y/n)
 echo.
 echo Importing Account database
 
-REM for %%i in (%dbpath%\*.sql) do echo %%i & %mysql%\mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < %%i
-%mysql%\mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < %dbpath%\realmdLoadDB.sql
-%mysql%\mysql -q -s -h %svr% --user=%user% --password=%pass% --port=%port% %wdb% < Tools\updateRealm.sql
+REM for %%i in (%dbpath%\*.sql) do echo %%i & %mysqlConnectionString% %adb% < %%i
+%mysqlConnectionString% < %dbpath%\realmdCreateDB.sql
+%mysqlConnectionString% %adb% < %dbpath%\realmdLoadDB.sql
+%mysqlConnectionString% %adb% < Tools\updateRealm.sql
 :done
-echo.
-echo Done :)
-echo.
-pause
+IF NOT "%skipPause%"=="on" (
+  echo.
+  echo Done :)
+  echo.
+)
+IF NOT "%skipPause%"=="on" pause
